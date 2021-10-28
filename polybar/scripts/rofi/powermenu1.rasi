@@ -79,7 +79,7 @@ listview {
     padding:                        15px;
     columns:                        1;
     lines:                          5;
-    spacing:                        15px;
+    spacing:                        2px;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
@@ -118,9 +118,12 @@ element-text {
 }
 
 element selected {
-    background-color:               @se;
     text-color:                     @bg;
 	border:							0px 0px 0px 0px;
     border-radius:                  0px;
     border-color:                  	@ac;
+}
+
+element-text selected {
+    text-color:                     @ac;
 }
