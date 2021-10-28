@@ -8,8 +8,8 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 10";
-    show-icons:                     true;
+	font:							"Iosevka Nerd Font 12";
+    show-icons:                     false;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
     drun-display-format:            "{name}";
@@ -28,7 +28,7 @@ window {
 	border:							0px 0px 0px 0px;
 	border-color:					@ac;
     border-radius:                  0px;
-	width:							350px;
+	width:							250px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -95,11 +95,11 @@ mainbox {
 }
 
 element {
-    background-color:               @al;
+    background-color:               @bg;
     text-color:                     @fg;
     orientation:                    horizontal;
     border-radius:                  0px;
-	padding: 						8px 8px 8px -20px;
+	padding: 						0px 0px 0px 0px;
 }
 
 element-icon {
@@ -108,16 +108,21 @@ element-icon {
 }
 
 element-text {
+    background-color:               @bg;
+    text-color:                     @fg;    
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         0px 2.5px 0px 2.5px;
+    margin:                         0px 0px 0px 0px;
 }
 
 element selected {
-    background-color:               @se;
     text-color:                     @bg;
 	border:							0px 0px 0px 0px;
     border-radius:                  0px;
     border-color:                  	@ac;
+}
+
+element-text selected {
+    text-color:                     @ac;
 }
