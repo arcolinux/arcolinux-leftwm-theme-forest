@@ -1,16 +1,26 @@
 #!/usr/bin/env bash
 
+## Author  : Aditya Shakya
+## Mail    : adi1090x@gmail.com
+## Github  : @adi1090x
+## Twitter : @adi1090x
+
 # Color files
 PFILE="$HOME/.config/leftwm/themes/current/polybar/colors.ini"
 RFILE="$HOME/.config/leftwm/themes/current/polybar/scripts/rofi/colors.rasi"
 LFILE="$HOME/.config/leftwm/themes/current/theme.toml"
+TFILE="$HOME/.config/leftwm/themes/current/template.liquid"
 
 # Change colors
 change_color() {
-	# leftwm
-	sed -i -e 's/focused_border_color = "#.*/focused_border_color = "'$SH5'"/g' $LFILE
-	sed -i -e 's/floating_border_color = "#.*/floating_border_color = "'$SH1'"/g' $LFILE
-	sed -i -e 's/default_border_color = "#.*/default_border_color = "'$SH1'"/g' $LFILE
+	# leftwm theme.toml
+	sed -i -e 's/focused_border_color = "#.*/focused_border_color = "'$AC'"/g' $LFILE
+	#sed -i -e 's/floating_border_color = "#.*/floating_border_color = "'$AC'"/g' $LFILE
+	#sed -i -e 's/default_border_color = "#.*/default_border_color = "'$AC'"/g' $LFILE
+
+	# leftwm template.liquid
+	sed -i -e '0,/%{T1}%{F#....../s//%{T1}%{F'$AC'/' $TFILE
+	sed -i -e '0,/{{tag.name}}%{F#....../s//{{tag.name}}%{F'$AC'/' $TFILE
 
 	# polybar
 	sed -i -e 's/background = #.*/background = #1F1F1F/g' $PFILE
@@ -36,6 +46,8 @@ change_color() {
 	EOF
 
 	polybar-msg cmd restart
+
+	leftwm-command SoftReload
 }
 
 if  [[ $1 = "--amber" ]]; then

@@ -8,7 +8,8 @@
 dir="~/.config/leftwm/themes/current/polybar/scripts/rofi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $dir/powermenu.rasi"
+#rofi_command="rofi -theme $dir/powermenu.rasi"
+rofi_command="rofi -theme $dir/powermenu1.rasi"
 
 # Options
 shutdown=" Shutdown"

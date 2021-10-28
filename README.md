@@ -1,1 +1,1 @@
-# Starwars: A leftwm configured theme
+# Forest: A leftwm configured theme
